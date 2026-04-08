@@ -5,9 +5,9 @@ package com.example.myplayground
  * Write an extension function for String that returns true if the string is a palindrome.
  * A palindrome is a word that reads the same backward as forward (e.g., "level", "radar").
  */
-fun String.isPalindrome(): Boolean {
-    // TODO: Implement this
-    return false
+fun String. isPalindrome(): Boolean {
+    val reversed = this.reversed()
+    return reversed == this
 }
 
 /**
