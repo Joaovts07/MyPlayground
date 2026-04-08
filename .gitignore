@@ -1,0 +1,17 @@
+# IDE & System files
+*.iml
+/.idea
+.DS_Store
+/captures
+.externalNativeBuild
+.cxx
+
+# Local configuration (Contains sensitive info like SDK paths)
+local.properties
+
+# Build artifacts
+/build
+.gradle
+
+# Android Studio / Layout Inspector
+*.hprof
