@@ -32,4 +32,13 @@ class ChallengesTest {
         assertEquals("a", reverseString("a"))
         assertEquals("", reverseString(""))
     }
+
+    @Test
+    fun testRomanToInt() {
+        assertEquals(3, romanToInt("III"))
+        assertEquals(4, romanToInt("IV"))
+        assertEquals(9, romanToInt("IX"))
+        assertEquals(58, romanToInt("LVIII"))
+        assertEquals(1994, romanToInt("MCMXCIV"))
+    }
 }
