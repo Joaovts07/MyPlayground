@@ -46,6 +46,28 @@ fun reverseString(input: String): String {
  * Example: "III" -> 3, "LVIII" -> 58, "MCMXCIV" -> 1994.
  */
 fun romanToInt(s: String): Int {
-    // TODO: Implement this
-    return 0
+    var result = 0
+    var lastValue = 0
+
+    for (i in s.length - 1 downTo 0) {
+        val current = when (s[i]) {
+            'I' -> 1
+            'V' -> 5
+            'X' -> 10
+            'L' -> 50
+            'C' -> 100
+            'D' -> 500
+            'M' -> 1000
+            else -> 0
+        }
+
+        if (current < lastValue) {
+            result -= current
+        } else {
+            result += current
+        }
+        lastValue = current
+    }
+
+    return result
 }
