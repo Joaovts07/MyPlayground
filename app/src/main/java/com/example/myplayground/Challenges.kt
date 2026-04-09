@@ -38,3 +38,14 @@ fun reverseString(input: String): String {
     // TODO: Implement this
     return ""
 }
+
+/**
+ * Challenge 5: Roman to Integer
+ * Write a function to convert a Roman numeral string to an integer.
+ * Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+ * Example: "III" -> 3, "LVIII" -> 58, "MCMXCIV" -> 1994.
+ */
+fun romanToInt(s: String): Int {
+    // TODO: Implement this
+    return 0
+}
