@@ -26,8 +26,8 @@ fun fizzBuzz(n: Int) {
  * Write a function to calculate the factorial of a number n (n!).
  */
 fun factorial(n: Int): Long {
-    // TODO: Implement this
-    return 0L
+    if (n < 0) return 0
+    return (2..n).fold(1L) { acc, i -> acc * i }
 }
 
 /**
