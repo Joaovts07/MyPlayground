@@ -40,7 +40,7 @@ class ChallengesTest {
     @Test
     fun testReverseString() {
         assertEquals("olleh", reverseString("hello"))
-        assertEquals("nitlok", reverseString("kotlin"))
+        assertEquals("niltok", reverseString("kotlin"))
         assertEquals("a", reverseString("a"))
         assertEquals("", reverseString(""))
     }
