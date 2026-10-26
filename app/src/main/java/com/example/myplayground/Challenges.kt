@@ -16,21 +16,16 @@ fun String.isPalindrome(): Boolean {
  * For multiples of 3, print "Fizz" instead of the number.
  * For multiples of 5, print "Buzz".
  * For multiples of both 3 and 5, print "FizzBuzz".
- */
-fun fizzBuzz(n: Int) {
-    fizzBuzzSequence(n).forEach(::println)
-}
-
-/**
  * No if/else chain: each rule contributes its word when it matches, the words are glued together,
  * and a number with no matching rule falls back to itself. Adding "Bazz" for 7 is a one-line change.
  */
 fun fizzBuzzSequence(
     n: Int,
-    rules: List<Pair<Int, String>> = listOf(3 to "Fizz", 5 to "Buzz")
+    rules: List<Pair<Int, String>> = listOf(3 to "Fizz", 5 to "Buzz"),
 ): Sequence<String> =
     (1..n).asSequence().map { i ->
-        rules.filter { (divisor, _) -> i % divisor == 0 }
+        rules
+            .filter { (divisor, _) -> i % divisor == 0 }
             .joinToString("") { (_, word) -> word }
             .ifEmpty { i.toString() }
     }
@@ -48,9 +43,10 @@ fun factorial(n: Int): Long {
  * Challenge 4: Reverse String
  * Write a function to reverse a string without using the built-in .reversed() function.
  */
-fun reverseString(input: String): String = buildString(input.length) {
-    for (i in input.lastIndex downTo 0) append(input[i])
-}
+fun reverseString(input: String): String =
+    buildString(input.length) {
+        for (i in input.lastIndex downTo 0) append(input[i])
+    }
 
 /**
  * Challenge 5: Roman to Integer
@@ -63,16 +59,17 @@ fun romanToInt(s: String): Int {
     var lastValue = 0
 
     for (i in s.length - 1 downTo 0) {
-        val current = when (s[i]) {
-            'I' -> 1
-            'V' -> 5
-            'X' -> 10
-            'L' -> 50
-            'C' -> 100
-            'D' -> 500
-            'M' -> 1000
-            else -> 0
-        }
+        val current =
+            when (s[i]) {
+                'I' -> 1
+                'V' -> 5
+                'X' -> 10
+                'L' -> 50
+                'C' -> 100
+                'D' -> 500
+                'M' -> 1000
+                else -> 0
+            }
 
         if (current < lastValue) {
             result -= current
