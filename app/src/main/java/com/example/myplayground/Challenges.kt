@@ -18,8 +18,22 @@ fun String.isPalindrome(): Boolean {
  * For multiples of both 3 and 5, print "FizzBuzz".
  */
 fun fizzBuzz(n: Int) {
-    // TODO: Implement this
+    fizzBuzzSequence(n).forEach(::println)
 }
+
+/**
+ * No if/else chain: each rule contributes its word when it matches, the words are glued together,
+ * and a number with no matching rule falls back to itself. Adding "Bazz" for 7 is a one-line change.
+ */
+fun fizzBuzzSequence(
+    n: Int,
+    rules: List<Pair<Int, String>> = listOf(3 to "Fizz", 5 to "Buzz")
+): Sequence<String> =
+    (1..n).asSequence().map { i ->
+        rules.filter { (divisor, _) -> i % divisor == 0 }
+            .joinToString("") { (_, word) -> word }
+            .ifEmpty { i.toString() }
+    }
 
 /**
  * Challenge 3: Factorial
@@ -34,9 +48,8 @@ fun factorial(n: Int): Long {
  * Challenge 4: Reverse String
  * Write a function to reverse a string without using the built-in .reversed() function.
  */
-fun reverseString(input: String): String {
-    // TODO: Implement this
-    return ""
+fun reverseString(input: String): String = buildString(input.length) {
+    for (i in input.lastIndex downTo 0) append(input[i])
 }
 
 /**

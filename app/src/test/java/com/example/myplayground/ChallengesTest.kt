@@ -18,6 +18,16 @@ class ChallengesTest {
     }
 
     @Test
+    fun testFizzBuzz() {
+        assertEquals(
+            listOf("1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"),
+            fizzBuzzSequence(15).toList()
+        )
+        assertEquals(emptyList<String>(), fizzBuzzSequence(0).toList())
+        assertEquals("FizzBuzzBazz", fizzBuzzSequence(105, listOf(3 to "Fizz", 5 to "Buzz", 7 to "Bazz")).last())
+    }
+
+    @Test
     fun testFactorial() {
         assertEquals(1L, factorial(0))
         assertEquals(1L, factorial(1))
@@ -30,7 +40,7 @@ class ChallengesTest {
     @Test
     fun testReverseString() {
         assertEquals("olleh", reverseString("hello"))
-        assertEquals("nitlok", reverseString("kotlin"))
+        assertEquals("niltok", reverseString("kotlin"))
         assertEquals("a", reverseString("a"))
         assertEquals("", reverseString(""))
     }
