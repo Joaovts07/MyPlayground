@@ -48,9 +48,8 @@ fun factorial(n: Int): Long {
  * Challenge 4: Reverse String
  * Write a function to reverse a string without using the built-in .reversed() function.
  */
-fun reverseString(input: String): String {
-    // TODO: Implement this
-    return ""
+fun reverseString(input: String): String = buildString(input.length) {
+    for (i in input.lastIndex downTo 0) append(input[i])
 }
 
 /**
