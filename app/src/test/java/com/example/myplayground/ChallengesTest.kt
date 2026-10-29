@@ -2,6 +2,7 @@ package com.example.myplayground
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -66,5 +67,17 @@ class ChallengesTest {
         assertFalse(isValidParentheses("(("))
         assertFalse(isValidParentheses("))"))
         assertFalse(isValidParentheses("}{"))
+    }
+
+    @Test
+    fun testTwoSum() {
+        assertEquals(0 to 1, twoSum(listOf(2, 7, 11, 15), 9))
+        assertEquals(1 to 2, twoSum(listOf(3, 2, 4), 6))
+        assertEquals(0 to 1, twoSum(listOf(3, 3), 6))
+        assertEquals(2 to 4, twoSum(listOf(-1, -2, -3, -4, -5), -8))
+        assertEquals(0 to 3, twoSum(listOf(0, 4, 3, 0), 0))
+        assertNull(twoSum(listOf(1, 2), 7))
+        assertNull(twoSum(listOf(5), 10))
+        assertNull(twoSum(emptyList(), 0))
     }
 }
