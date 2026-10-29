@@ -53,4 +53,18 @@ class ChallengesTest {
         assertEquals(58, romanToInt("LVIII"))
         assertEquals(1994, romanToInt("MCMXCIV"))
     }
+
+    @Test
+    fun testIsValidParentheses() {
+        assertTrue(isValidParentheses(""))
+        assertTrue(isValidParentheses("()"))
+        assertTrue(isValidParentheses("()[]{}"))
+        assertTrue(isValidParentheses("{[()]}"))
+        assertTrue(isValidParentheses("fun main() { println(list[0]) }"))
+        assertFalse(isValidParentheses("(]"))
+        assertFalse(isValidParentheses("([)]"))
+        assertFalse(isValidParentheses("(("))
+        assertFalse(isValidParentheses("))"))
+        assertFalse(isValidParentheses("}{"))
+    }
 }
