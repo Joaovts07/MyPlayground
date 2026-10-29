@@ -81,3 +81,15 @@ fun romanToInt(s: String): Int {
 
     return result
 }
+
+/**
+ * Challenge 6: Valid Parentheses
+ * Write a function that returns true if every bracket in the string is correctly closed.
+ * Brackets are (), [] and {}. Each opener must be closed by the same type, in the right order.
+ * Any other character is ignored.
+ * Example: "()[]{}" -> true, "{[()]}" -> true, "(]" -> false, "([)]" -> false, "((" -> false.
+ */
+fun isValidParentheses(s: String): Boolean {
+    // TODO: Implement this
+    return false
+}
