@@ -93,3 +93,16 @@ fun isValidParentheses(s: String): Boolean {
     // TODO: Implement this
     return false
 }
+
+/**
+ * Challenge 7: Two Sum
+ * Write a function that finds two different positions in the list whose numbers add up to target.
+ * Return the pair of indices (smaller index first), or null if no such pair exists.
+ * The same position can't be used twice. You can assume there is at most one valid pair.
+ * Bonus: solve it in a single pass over the list, without checking every pair.
+ * Example: [2, 7, 11, 15], target 9 -> (0, 1); [3, 2, 4], target 6 -> (1, 2); [1, 2], target 7 -> null.
+ */
+fun twoSum(nums: List<Int>, target: Int): Pair<Int, Int>? {
+    // TODO: Implement this
+    return null
+}
